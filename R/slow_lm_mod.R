@@ -8,6 +8,10 @@ slow_lm_mod <- function(tbl) {
   for (i in 1:20) {
     Sys.sleep(1)
     cat(".", append = TRUE)
+    if (i == 10) {
+      message("Go get a coffe!")
+    }
+    if (i == 15) message("Come back next week!")
   }
 
   lm(bp_dia_ave ~ bp_sys_ave + gender + age, tbl2)
