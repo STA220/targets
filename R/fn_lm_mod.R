@@ -1,0 +1,8 @@
+#' Fit a linear model to predict diastolic blood pressure based on systolic blood pressure
+#' @param tbl A data frame containing the variables `bp_dia_ave`, `bp_sys_ave`, `gender`, and `age`. The function will filter out rows where `bp_dia_ave` or `bp_sys_ave` are not greater than 0 before fitting the model.
+#' @returns A linear model object resulting from fitting the specified linear regression model.
+fn_lm_mod <- function(tbl) {
+  tbl2 <- filter(tbl, bp_dia_ave > 0, bp_sys_ave > 0)
+  Sys.sleep(5)
+  lm(bp_dia_ave ~ bp_sys_ave + gender + age, tbl2)
+}

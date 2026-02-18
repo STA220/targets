@@ -1,20 +1,17 @@
-# Libraries ----
 library(targets)
 library(tarchetypes)
+tar_source()
 
-# Source ----
-tar_source("functions.R")
-
-# Settings ----
 tar_option_set(
-  format = "rds",
+  format = "qs",
   packages = c(
-    "dplyr", "janitor",
-    "plotly", "NHANES"
+    "dplyr",
+    "janitor",
+    "plotly",
+    "NHANES"
   )
 )
 
-# Targets ----
 list(
   # * Input data ----
   tar_target(
@@ -77,5 +74,4 @@ list(
   # Exercise ----
   # Don't forget to add a "," after the last target ^^
   # Your code here....
-
 )

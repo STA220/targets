@@ -1,5 +1,3 @@
-setwd(here::here("code/03-files"))
-
 library(targets)
 
 # Visualize the pipeline graph
@@ -27,7 +25,6 @@ tar_make()
 tar_visnetwork()
 tar_outdated()
 tar_make()
-
 
 # Further reading
 # https://books.ropensci.org/targets/data.html#clean-up-local-files
