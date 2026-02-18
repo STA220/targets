@@ -18,14 +18,14 @@ list(
   tar_target(tbl_clean, fn_clean(tbl_NHANES_subset)),
 
   # * Model ----
-  tar_target(mod_lm, fn_lm_mod(tbl_clean)),
+  tar_target(mod_lm, slow_lm_mod(tbl_clean)),
   tar_target(mod_lm_coeffs, broom::tidy(mod_lm)),
 
   # * Export ----
   tar_target(
     export_mod_lm_coeffs,
     {
-      output_file <- "data/mod_lm_coeffs.csv"
+      output_file <- "output/mod_lm_coeffs.csv"
       readr::write_csv(mod_lm_coeffs, output_file)
       output_file
     },
