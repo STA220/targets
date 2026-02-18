@@ -12,9 +12,10 @@ tar_visnetwork()
 # Check the status of targets
 tar_outdated()
 tar_progress()
+tar_make()
 
 # Read the output of a target
-tar_read(local_file)
+tar_read(mod_lm_coeffs)
 
 # Change the input file
 tar_visnetwork()
